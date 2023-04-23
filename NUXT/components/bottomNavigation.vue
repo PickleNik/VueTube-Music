@@ -133,14 +133,14 @@ export default {
         },
         // { name: "Shorts", icon: "mdi-lightning-bolt", link: "/shorts" },
         // { name: "Upload", icon: "mdi-plus", link: "/upload" },
-        {
-          name: "",
-          icon: "mdi-youtube-subscription",
-          svg: "subs",
-          svg2: "fsubs",
-          svg3: "csubs",
-          link: "/subscriptions",
-        },
+        // {
+        //   name: "",
+        //   icon: "mdi-youtube-subscription",
+        //   svg: "subs",
+        //   svg2: "fsubs",
+        //   svg3: "csubs",
+        //   link: "/subscriptions",
+        // },
         {
           name: "",
           icon: "mdi-view-list",
