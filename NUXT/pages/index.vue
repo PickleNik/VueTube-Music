@@ -79,7 +79,7 @@ export default {
       return this.$router.replace("/activities/update");
 
     //---   Start Innertube Connection   ---//
-    await this.$youtube.getAPI();
+    // await this.$youtube.getAPI();
     this.progressMsg = this.$lang("index").launching;
 
     if (localStorage.getItem("firstTimeSetupComplete")) {

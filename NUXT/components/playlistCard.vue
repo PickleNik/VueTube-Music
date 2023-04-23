@@ -16,6 +16,7 @@
         : '0',
     }"
     flat
+    @click="$router.push('/watch')"
   >
     <v-img
       contain
