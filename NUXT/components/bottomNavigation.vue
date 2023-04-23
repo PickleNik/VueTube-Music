@@ -2,6 +2,9 @@
   <div
     v-if="!$route.path.includes('/mods') && !$route.path.includes('/tweaks')"
     :class="$vuetify.theme.dark ? 'lighten-1' : 'darken-1'"
+    style="
+      box-shadow: 0 -1rem 3rem -0.5rem var(--v-background-lighten1) !important;
+    "
     class="bottomNav background"
   >
     <!-- <v-divider v-if="!$store.state.tweaks.roundTweak" /> -->
@@ -11,8 +14,9 @@
         box-shadow: none !important;
         padding: 0 !important;
         position: relative;
+        padding-right: 2.95rem !important;
       "
-      class="transparent nav"
+      class="transparent nav flex justify-end"
       :shift="$store.state.tweaks.navigationShift"
     >
       <v-btn
@@ -24,10 +28,9 @@
         :to="item.link"
         plain
       >
-        <span v-if="$store.state.tweaks.navigationText" v-text="item.name" />
+        <!-- <span v-if="$store.state.tweaks.navigationText" v-text="item.name" /> -->
         <div
           v-if="$store.state.tweaks.navigationIcons !== 0"
-          class="px-3"
           :style="{
             color:
               tabSelection == i
@@ -39,8 +42,8 @@
           :class="
             tabSelection == i && $store.state.tweaks.navigationShift
               ? $vuetify.theme.dark
-                ? 'tab primary darken-4'
-                : 'tab primary lighten-4'
+                ? 'tab background darken-4'
+                : 'tab background lighten-4'
               : ''
           "
         >
@@ -118,27 +121,52 @@
         style="
           border-radius: 0.5rem;
           position: fixed;
-          left: 0.75rem;
-          bottom: 0.75rem;
+          left: 1.75rem;
+          bottom: 1.75rem;
           height: 2rem;
           width: 2rem;
         "
         :class="$vuetify.theme.dark ? 'lighten-2' : 'darken-2'"
       ></div>
-      <q-btn
-        class="background"
+      <b
+        class="white--text"
+        style="
+          font-family: monospace !important;
+          position: absolute;
+          left: 3.5rem;
+          font-size: 0.75rem;
+          top: 0.75rem;
+        "
+      >
+        Title
+      </b>
+      <span
+        class="primary--text"
         :class="$vuetify.theme.dark ? 'lighten-2' : 'darken-2'"
         style="
+          font-family: monospace !important;
+          position: absolute;
+          left: 3.5rem;
+          font-size: 0.5rem;
+          top: 1.85rem;
+        "
+      >
+        Artist
+      </span>
+      <!-- :class="$vuetify.theme.dark ? 'lighten-2' : 'darken-2'" -->
+      <button
+        class="primary"
+        style="
           position: fixed;
-          right: 0.75rem;
-          bottom: 0.75rem;
+          right: 1.75rem;
+          bottom: 1.75rem;
           height: 2rem;
           width: 2rem;
           border-radius: 5rem;
         "
       >
-        <v-icon style="margin: auto" size="2rem">mdi-play</v-icon>
-      </q-btn>
+        <v-icon color="background" size="1.5rem">mdi-play</v-icon>
+      </button>
     </v-bottom-navigation>
   </div>
 </template>
@@ -197,7 +225,7 @@ export default {
   width: 3.25rem;
   position: absolute;
   transition: transform 0.15s ease-in-out, scale 0.1s ease;
-  background-color: var(--v-primary-base);
+  background-color: var(--v-background-lighten5);
   padding: 0.1em 0.5em 0.1em 0.5em;
   border-radius: 2rem;
   opacity: 0.25;
@@ -206,11 +234,11 @@ export default {
 }
 /* TODO: calculate inside <template></template> based on tabs.length */
 .nav .link:first-child.link-active ~ .link-anime {
-  transform: translateX(calc(-62.5vw + 50%));
+  transform: translateX(calc(-37.5vw + 50%));
   scale: 1;
 }
 .nav .link:nth-child(2).link-active ~ .link-anime {
-  transform: translateX(calc(-37.5vw + 50%));
+  transform: translateX(calc(-22vw + 50%));
   scale: 1;
 }
 /* .nav .link:nth-child(3).link-active ~ .link-anime {
@@ -224,16 +252,16 @@ export default {
   box-shadow: none !important;
   border-radius: 1rem;
   position: fixed;
+  margin: 1rem !important;
   z-index: 100;
-  width: 100%;
+  width: calc(100% - 2rem);
+  box-shadow: 0 -1rem 1rem 1rem #fff;
   bottom: 0;
 }
 .navButton {
-  width: 25vw !important;
   font-size: 0.66rem !important;
 }
 .tab {
-  padding: 0.1em 0.5em 0.1em 0.5em;
   border-radius: 2rem;
 }
 </style>
