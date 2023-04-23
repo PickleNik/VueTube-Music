@@ -10,7 +10,7 @@
     >
       Artist
     </span>
-    <h1>Title</h1>
+    <h1 class="text-3xl font-bold">Title</h1>
 
     <div
       class="background"
@@ -22,15 +22,15 @@
       "
       :class="$vuetify.theme.dark ? 'lighten-1' : 'darken-1'"
     ></div>
-    <div class="flex justify-space-around" style="max-height: 6rem">
-      <q-btn
+    <div class="flex items-center" style="max-height: 6rem">
+      <button
         class="background"
-        :class="$vuetify.theme.dark ? 'lighten-2' : 'darken-2'"
-        style="height: 2rem !important; width: 2rem; border-radius: 100%"
+        :class="$vuetify.theme.dark ? 'lighten-1' : 'darken-1'"
+        style="height: 3rem !important; width: 3rem; border-radius: 100%"
       >
-        <v-icon size="2.5rem">mdi-skip-previous</v-icon>
-      </q-btn>
-      <q-btn
+        <v-icon size="2rem">mdi-skip-previous</v-icon>
+      </button>
+      <button
         class="background"
         :class="$vuetify.theme.dark ? 'lighten-2' : 'darken-2'"
         style="
@@ -41,16 +41,16 @@
           margin: 2rem;
         "
       >
-        <v-icon size="3.5rem">mdi-play</v-icon>
-      </q-btn>
-      <q-btn
+        <v-icon color="primary" size="3.5rem">mdi-play</v-icon>
+      </button>
+      <button
         class="background"
-        :class="$vuetify.theme.dark ? 'lighten-2' : 'darken-2'"
-        style="height: 2rem !important; width: 2rem; border-radius: 100%"
+        :class="$vuetify.theme.dark ? 'lighten-1' : 'darken-1'"
+        style="height: 3rem !important; width: 3rem; border-radius: 100%"
         label="test"
       >
-        <v-icon size="2.5rem">mdi-skip-next</v-icon>
-      </q-btn>
+        <v-icon size="2rem">mdi-skip-next</v-icon>
+      </button>
     </div>
     <!-- <div id="player-container">
       <player
