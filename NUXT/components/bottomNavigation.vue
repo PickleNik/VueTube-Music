@@ -129,7 +129,7 @@
         :class="$vuetify.theme.dark ? 'lighten-2' : 'darken-2'"
       ></div>
       <b
-        class="white--text"
+        class="text-white"
         style="
           font-family: monospace !important;
           position: absolute;

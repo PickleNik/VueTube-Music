@@ -21,13 +21,17 @@
     "webpack": "^4.46.0"
   },
   "devDependencies": {
+    "@nuxtjs/tailwindcss": "^6.6.6",
     "@nuxtjs/vuetify": "^1.12.3",
+    "autoprefixer": "^10.4.14",
     "babel-eslint": "^10.1.0",
     "eslint": "^7.32.0",
     "eslint-config-prettier": "^8.3.0",
     "eslint-loader": "^4.0.2",
     "eslint-plugin-prettier": "^4.2.1",
     "eslint-plugin-vue": "^8.2.0",
-    "prettier": "^2.5.1"
+    "postcss": "^8.4.23",
+    "prettier": "^2.5.1",
+    "tailwindcss": "^3.3.1"
   }
 }

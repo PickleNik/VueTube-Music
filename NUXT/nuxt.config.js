@@ -51,10 +51,10 @@ export default {
     ],
   },
 
-  css: [],
+  css: ["~/assets/tailwind.css"],
   components: true,
 
-  buildModules: ["@nuxtjs/vuetify"],
+  buildModules: ["@nuxtjs/vuetify", "@nuxtjs/tailwindcss"],
   modules: [],
 
   vuetify: {
