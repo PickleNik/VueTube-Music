@@ -1,9 +1,10 @@
 <template>
   <div
     v-if="!$route.path.includes('/mods') && !$route.path.includes('/tweaks')"
+    :class="$vuetify.theme.dark ? 'lighten-1' : 'darken-1'"
     class="bottomNav background"
   >
-    <v-divider v-if="!$store.state.tweaks.roundTweak" />
+    <!-- <v-divider v-if="!$store.state.tweaks.roundTweak" /> -->
     <v-bottom-navigation
       v-model="tabSelection"
       style="
@@ -112,6 +113,32 @@
         @click="searchBtn()"
         ><v-icon>mdi-magnify</v-icon></v-btn
       > -->
+      <div
+        class="background"
+        style="
+          border-radius: 0.5rem;
+          position: fixed;
+          left: 0.75rem;
+          bottom: 0.75rem;
+          height: 2rem;
+          width: 2rem;
+        "
+        :class="$vuetify.theme.dark ? 'lighten-2' : 'darken-2'"
+      ></div>
+      <q-btn
+        class="background"
+        :class="$vuetify.theme.dark ? 'lighten-2' : 'darken-2'"
+        style="
+          position: fixed;
+          right: 0.75rem;
+          bottom: 0.75rem;
+          height: 2rem;
+          width: 2rem;
+          border-radius: 5rem;
+        "
+      >
+        <v-icon style="margin: auto" size="2rem">mdi-play</v-icon>
+      </q-btn>
     </v-bottom-navigation>
   </div>
 </template>
@@ -157,8 +184,8 @@ export default {
   mounted() {
     const lang = this.$lang("global");
     this.tabs[0].name = lang.home;
-    this.tabs[1].name = lang.subscriptions;
-    this.tabs[2].name = lang.library;
+    // this.tabs[1].name = lang.subscriptions;
+    this.tabs[1].name = lang.library;
   },
 };
 </script>
@@ -179,22 +206,23 @@ export default {
 }
 /* TODO: calculate inside <template></template> based on tabs.length */
 .nav .link:first-child.link-active ~ .link-anime {
-  transform: translateX(calc(-75vw + 50%));
+  transform: translateX(calc(-62.5vw + 50%));
   scale: 1;
 }
 .nav .link:nth-child(2).link-active ~ .link-anime {
-  transform: translateX(calc(-50vw + 50%));
+  transform: translateX(calc(-37.5vw + 50%));
   scale: 1;
 }
-.nav .link:nth-child(3).link-active ~ .link-anime {
+/* .nav .link:nth-child(3).link-active ~ .link-anime {
   transform: translateX(calc(-25vw + 50%));
   scale: 1;
-}
+} */
 .bottomNav {
   /* box-shadow: inset 0 0 10rem var(--v-background-base) !important; */
-  height: calc(4rem + env(safe-area-inset-bottom)) !important;
+  height: calc(3.5rem + env(safe-area-inset-bottom)) !important;
   padding-bottom: env(safe-area-inset-bottom) !important;
   box-shadow: none !important;
+  border-radius: 1rem;
   position: fixed;
   z-index: 100;
   width: 100%;
